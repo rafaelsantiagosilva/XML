@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>04: XMLParser</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>XMLParser</h1>
+			<h2>Analisando uma string</h2>
+			<p id="title">Título:</p>
+			<p id="author">Autor:</p>
+			<p id="year">Ano:</p>
+			<p id="price">Preço:</p>
+		</div>
+
+		<script type="text/javascript">
+			var text, parser, xmlDoc;
+			var tags = ["title", "author", "year", "price"];
+
+			// String que vai pro XML
+			text =
+				"<bookstore><book>" +
+				"<title>Harry Potter</title>" +
+				"<author>J K. Rowling</author>" +
+				"<year>2005</year>" +
+				"<price>29.99</price>" +
+				"</book></bookstore>";
+
+			// Analisador do DOM...
+			parser = new DOMParser();
+
+			// ...cria um novo objeto DOM XML usando a String
+			xmlDoc = parser.parseFromString(text, "text/xml");
+
+			tags.forEach((tag) => {
+				document.getElementById(tag).innerHTML +=
+					// Pegando os textos das tags XML e colocando em suas tags HTML correspondentes
+					" " + xmlDoc.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
+			});
+		</script>
+	</body>
+</html>
