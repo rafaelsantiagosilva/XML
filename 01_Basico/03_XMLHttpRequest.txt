@@ -1,0 +1,5 @@
+Com o objeto xmlHttPrequest, você pode atualizar partes de uma página da web,
+sem recarregar a página inteira.
+
+O objeto xmlHttPrequest é usado para trocar dados com um servidor
+Por trás das cenas.

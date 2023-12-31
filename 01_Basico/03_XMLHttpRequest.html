@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>03: XMLHttpRequest</title>
+		<style>
+			* {
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			h1 {
+				text-align: center;
+			}
+
+			p {
+				text-align: center;
+			}
+
+			button {
+				cursor: pointer;
+				display: block;
+				margin: 0 auto;
+			}
+
+			.container {
+				margin: 0 4em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>XMLHttpRequest</h1>
+			<p id="demo"></p>
+			<button type="button" id="loadXML">Mudar o Conteúdo!</button>
+		</div>
+		<script type="text/javascript">
+			function loadXMLDoc() {
+				var xhttp = new XMLHttpRequest(); // Novo objeto XMLHttpRequest()
+
+				// Executar sempre que o status do objeto for mudado
+				xhttp.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status == 200) {
+						// Ação tomada quando o documento está pronto
+						document.getElementById("demo").innerHTML = this.responseText;
+					}
+				};
+
+				xhttp.open("GET", "./03_XMLHttpRequest.txt", true);
+				xhttp.send();
+			}
+
+			document.getElementById("loadXML").addEventListener("click", loadXMLDoc);
+		</script>
+	</body>
+</html>
