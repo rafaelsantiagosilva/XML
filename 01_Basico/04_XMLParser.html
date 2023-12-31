@@ -38,7 +38,7 @@
 			tags.forEach((tag) => {
 				document.getElementById(tag).innerHTML +=
 					// Pegando os textos das tags XML e colocando em suas tags HTML correspondentes
-					" " + xmlDoc.getElementsByTagName(tag)[0].childNodes[0].nodeValue;
+					" " + xmlDoc.getElementsByTagName(tag)[0].childNodes[0].nodeValue; // <- Aqui manipulamos o DOM do XML
 			});
 		</script>
 	</body>
