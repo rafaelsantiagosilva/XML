@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Uma versão de uma tabela -->
+<h:table xmlns:h="http://www.w3.org/TR/html4/"> <!--Adicionando um namespace para este prefixo-->
+     <h:tr>
+          <h:td>Apples</h:td>
+          <h:td>Bananas</h:td>
+     </h:tr>
+</h:table>
+
+<!-- Outra versão de outra tabela -->
+<f:table xmls:f="https://www.w3schools.com/furniture"> <!--Adicionando um namespace para este prefixo-->
+     <f:name>African Coffee Table</f:name>
+     <f:width>80</f:width>
+     <f:length>120</f:length>
+</f:table>
